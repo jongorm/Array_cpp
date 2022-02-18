@@ -1,5 +1,3 @@
-Makefile in this project followed the Makefile provided in the ComplexNumber example
-
 Terminal: 
 
 make: compiles all source and header files with the main program
