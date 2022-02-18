@@ -4,23 +4,15 @@
 class Array {
  public:
   // default constructor
-  // overwrite this one to set data and size to
-  // empty status
   Array();
 
   // copy constructor
-  // we want to perform a deep copy so that
-  // each Array will own its own
-  // data and copies the values of the "other"
-  // hint: you need a for/while loop here
   Array(const Array &other);
 
   // constructor with array size and
   // the default initialization value
   explicit Array(unsigned n, double v = 0.0);
 
-  // we want to overwrite the implicit destructor
-  // so that the memory is freed!
   ~Array();
 
   // get the length of array
@@ -33,7 +25,6 @@ class Array {
   const double *data() const;
 
   // given a rhs Array, copy its value
-  // make sure the sizes are same
   void copy(const Array &rhs);
 
   // reference entry "index" of the data
@@ -43,16 +34,6 @@ class Array {
   const double &at(unsigned index) const;
 
   // resize the array
-  // require memory allocation and deallocation
-  // prsv is a flag that indicates if the user
-  // wants to preserve the old values
-  //
-  // pseudo code:
-  //   create new_data (dynamically) with size new_size
-  //   if presv:
-  //      copy _data to new_data with size = min(new_size, _size)
-  //   free the old memory (_data)
-  //   copy new_data pointer to _data
   void resize(unsigned new_size, bool prsv = true);
 
   // some math functions
@@ -78,7 +59,7 @@ class Array {
   double &      operator[](const unsigned index);
   const double &operator[](const unsigned index) const;
 
-  // assignment, hint call resize if other and "this" have difference sizes
+  // assignment
   Array &operator=(const Array &other);
 
  private:
